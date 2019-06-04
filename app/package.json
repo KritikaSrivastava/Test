@@ -1,0 +1,22 @@
+{
+  "name": "walmart-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "author": "Kritika",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.19.0",
+    "elastic-builder": "^2.3.1",
+    "elasticsearch": "^16.1.0",
+    "express": "^4.17.0",
+    "helmet": "^3.18.0",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0"
+  }
+}
