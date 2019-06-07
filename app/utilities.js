@@ -1,11 +1,14 @@
-// function to fetch data from external firebase API
+// containing function to fetch data from external firebase API
 //Also check whether the index exists or not. If it doesnt it creates one
 var config = require('./config/config.js')
 var request = require('request')
+
 const addData = (repo) => {
   const url = config.externalAPISetting.url;
   let pageNumber = config.externalAPISetting.pageNumber;
   let pageSize = config.externalAPISetting.pageSize;
+
+  //checks to see if the index exists or not. If it doesnt then it creates one
   repo.indexExists().then(data => {
     if(data == false) {
       repo.initIndex().then(data => {
@@ -17,6 +20,8 @@ const addData = (repo) => {
   }).catch(function(err) {
     console.log(err);
   });
+
+  //fetching the data from the external API in a loop and storing it in elastic search engine
   do {
   request(url + `/${pageNumber}` + `/${pageSize}`,
     function(err, res, body) {
@@ -42,4 +47,5 @@ const addData = (repo) => {
    }while(pageNumber <= 8);
 }
 
+//exposes the addData object
 module.exports = Object.assign({}, {addData})

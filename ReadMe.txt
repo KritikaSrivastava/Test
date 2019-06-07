@@ -2,7 +2,7 @@
 The application has been deployed on AWS EC2 instance. The url can be accessed on the web
 
 Valid Parameters - 
-search minPrice maxPrice minReviewRating maxReviewRating minReviewCount maxReviewCount inStock
+search, minPrice, maxPrice, minReviewRating, maxReviewRating, minReviewCount, maxReviewCount, inStock
 
 Sample URL's -
 

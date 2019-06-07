@@ -70,27 +70,12 @@ const repository = (elasticClient) => {
     })
   }
 
-  const ping = () => {
-    return new Promise((resolve, reject) => {
-      elasticClient.ping({
-          requestTimeout: 30000,
-      }, function (error,resp) {
-        if (error) {
-          reject(error.message);
-        } else {
-            resolve(resp);
-          }
-        });
-      });
-  }
-
   return Object.create({
     addDocument,
     search,
     initIndex,
-    indexExists,
-    ping
-  })
+    indexExists
+    })
 }
 
 const connect = (connection) => {

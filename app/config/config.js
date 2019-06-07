@@ -11,11 +11,14 @@ const serverSettings = {
   port: process.env.PORT || 3000
 }
 
+//elasticsearch engine parameters
 const elasticSearchSetting = {
   type:'Products',
   index:'practise-elasticsearch',
   size:1000
 }
+
+//external API parameters
 const externalAPISetting = {
   url:'https://mobile-tha-server.firebaseapp.com/walmartproducts',
   pageNumber: 1,

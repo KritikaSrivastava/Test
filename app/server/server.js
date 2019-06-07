@@ -18,10 +18,13 @@ const start = (options) => {
     // let's init a express app, and add some middlewares
     const app = express()
 
+    //logger modules helps to keep logs
     app.use(logger('dev'))
     app.use(logger('common', {
       stream: fs.createWriteStream('./access.log', {flags: 'a'})
     }));
+
+    //the helpmet module is used for Security purposes
     app.use(helmet())
     app.use((err, req, res, next) => {
       reject(new Error('Something went wrong!, err:' + err))
@@ -32,7 +35,6 @@ const start = (options) => {
     movieAPI(app, options)
     // finally we start the server, and return the newly created server
     const server = app.listen(options.port, () => resolve(server))
-
   })
 }
 

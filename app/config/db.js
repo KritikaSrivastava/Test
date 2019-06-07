@@ -2,6 +2,7 @@ var ElasticSearch = require('elasticsearch');
 
 
 //  function to connect to the elastic search engine
+//options contains database parameters and mediator is an event emitter
 const connect = (options, mediator) => {
   mediator.once('boot.ready', () => {
     var elasticClient = new ElasticSearch.Client ({host:options.hosts});
